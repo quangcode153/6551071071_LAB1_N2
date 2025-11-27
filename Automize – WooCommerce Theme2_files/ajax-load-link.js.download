@@ -1,0 +1,25 @@
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!******************************************************!*\
+  !*** ./assets/js/frontend/widgets/ajax-load-link.js ***!
+  \******************************************************/
+/**
+ * Ajax load link JS.
+ *
+ * @param {jQuery} $ The Jquery Obj.
+ * @version 1.0.0
+ * @since 1.0.0
+ */
+(function ($) {
+  'use strict';
+
+  $(document.body).on('click', '.rbb-sidebar-shop-filter a.filter-link', function (evt) {
+    evt.preventDefault();
+    var $this = $(this),
+      url = $this.attr('href');
+    window.RbbWoocommerceFilters.filterByUrl(url);
+  });
+})(jQuery);
+/******/ })()
+;
+//# sourceMappingURL=ajax-load-link.js.map

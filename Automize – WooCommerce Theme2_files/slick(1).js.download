@@ -1,0 +1,78 @@
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!**************************************************************!*\
+  !*** ./assets/js/frontend/elementor/widgets/slider/slick.js ***!
+  \**************************************************************/
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+/**
+ * Slick Elementor Widget.
+ *
+ * @version 1.0.0
+ * @since 1.0.0
+ */
+
+(function ($) {
+  'use strict';
+
+  // eslint-disable-next-line no-shadow
+  var RbbSliderHandler = function RbbSliderHandler($scope, $) {
+    var $element = $($scope).find('.rbb-slick-carousel');
+    $element.on('init', function (e) {
+      var $animation = $('.slick-current.slick-active', $(e.target)).first().find('[data-animation]');
+      doAnimations($animation);
+    });
+    $element.on('beforeChange', function (e, slick, currentSlide, nextSlide) {
+      var $animation = $('div.slick-slide[data-slick-index="' + nextSlide + '"]', this).find('[data-animation]');
+      var current = $('div.slick-slide[data-slick-index="' + currentSlide + '"]', this);
+      current.find('[data-visibility-start]').each(function () {
+        var visibility = $(this).data('visibility-start');
+        if (visibility === 'invisible') {
+          $(this).removeClass('visible').addClass('invisible');
+        }
+      });
+      doAnimations($animation);
+    });
+    $element.slick({
+      rtl: window.rbb_vars.rtl === 'true'
+    });
+    var $parallax = $($scope).find('.parallax');
+    $parallax.each(function () {
+      // eslint-disable-next-line no-undef
+      new Parallax(this, {
+        selector: '.layer'
+      });
+    });
+    var $countdown = $($scope).find('[data-countdown-date]');
+    if ($countdown.length && (typeof RbbCountdown === "undefined" ? "undefined" : _typeof(RbbCountdown)) === 'object') {
+      // eslint-disable-next-line no-undef
+      RbbCountdown.render($countdown);
+    }
+    function doAnimations(elements) {
+      var animationEndEvents = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+      elements.each(function () {
+        var $this = $(this);
+        var $animationDelay = $this.data('animation-delay');
+        var $animationType = 'animated ' + $this.data('animation');
+        $this.css({
+          'animation-delay': $animationDelay,
+          '-webkit-animation-delay': $animationDelay
+        });
+        setTimeout(function () {
+          $this.removeClass('invisible');
+          $this.addClass('visible');
+        }, parseInt($animationDelay) + 100);
+        $this.addClass($animationType).one(animationEndEvents, function () {
+          $this.removeClass($animationType);
+        });
+      });
+    }
+  };
+
+  // Make sure you run this code under Elementor.
+  $(window).on('elementor/frontend/init', function () {
+    elementorFrontend.hooks.addAction('frontend/element_ready/rbb_slider.default', RbbSliderHandler);
+  });
+})(jQuery);
+/******/ })()
+;
+//# sourceMappingURL=slick.js.map
