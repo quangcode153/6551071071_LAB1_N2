@@ -1,0 +1,554 @@
+/* Animations and Transitions */
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        max-height: 0;
+        opacity: 0;
+    }
+    to {
+        max-height: 500px;
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        max-height: 500px;
+        opacity: 1;
+    }
+    to {
+        max-height: 0;
+        opacity: 0;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.fade-in-down {
+    animation: fadeInDown 0.6s ease-out;
+}
+
+.fade-in-left {
+    animation: fadeInLeft 0.6s ease-out;
+}
+
+.fade-in-right {
+    animation: fadeInRight 0.6s ease-out;
+}
+
+.scale-in {
+    animation: scaleIn 0.4s ease-out;
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.5s ease-out;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.5s ease-out;
+}
+
+/* Hover Effects */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+.hover-rotate {
+    transition: transform 0.3s ease;
+}
+
+.hover-rotate:hover {
+    transform: rotate(5deg);
+}
+
+.hover-brightness {
+    transition: filter 0.3s ease;
+}
+
+.hover-brightness:hover {
+    filter: brightness(1.1);
+}
+
+/* Slider Animations */
+.slide.active {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.slide-text {
+    animation: fadeInLeft 0.8s ease-out 0.2s backwards;
+}
+
+.slide-image {
+    animation: fadeInRight 0.8s ease-out 0.4s backwards;
+}
+
+/* Product Card Animations */
+.product-card {
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: backwards;
+}
+
+.product-card:nth-child(1) { animation-delay: 0.1s; }
+.product-card:nth-child(2) { animation-delay: 0.2s; }
+.product-card:nth-child(3) { animation-delay: 0.3s; }
+.product-card:nth-child(4) { animation-delay: 0.4s; }
+.product-card:nth-child(5) { animation-delay: 0.5s; }
+.product-card:nth-child(6) { animation-delay: 0.6s; }
+.product-card:nth-child(7) { animation-delay: 0.7s; }
+.product-card:nth-child(8) { animation-delay: 0.8s; }
+
+.product-image img {
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.1);
+}
+
+.wishlist-btn {
+    transition: all 0.3s ease;
+}
+
+.wishlist-btn:hover {
+    transform: scale(1.1);
+    color: var(--primary-color);
+}
+
+/* Category Card Animations */
+.category-card {
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: backwards;
+}
+
+.category-card:nth-child(1) { animation-delay: 0.1s; }
+.category-card:nth-child(2) { animation-delay: 0.2s; }
+.category-card:nth-child(3) { animation-delay: 0.3s; }
+.category-card:nth-child(4) { animation-delay: 0.4s; }
+.category-card:nth-child(5) { animation-delay: 0.5s; }
+
+.category-icon {
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover .category-icon {
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* Brand Item Animations */
+.brand-item {
+    animation: scaleIn 0.5s ease-out;
+    animation-fill-mode: backwards;
+}
+
+.brand-item:nth-child(1) { animation-delay: 0.05s; }
+.brand-item:nth-child(2) { animation-delay: 0.1s; }
+.brand-item:nth-child(3) { animation-delay: 0.15s; }
+.brand-item:nth-child(4) { animation-delay: 0.2s; }
+.brand-item:nth-child(5) { animation-delay: 0.25s; }
+.brand-item:nth-child(6) { animation-delay: 0.3s; }
+
+/* Button Animations */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Badge Pulse Animation */
+.badge {
+    animation: pulse 2s infinite;
+}
+
+/* Countdown Animation */
+.countdown-value {
+    transition: all 0.3s ease;
+}
+
+.countdown-item.updating .countdown-value {
+    animation: bounce 0.5s ease;
+}
+
+/* Loading Animation */
+.loading {
+    position: relative;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    animation: shimmer 2s infinite;
+}
+
+/* Skeleton Loading */
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        #f0f0f0 25%,
+        #e0e0e0 50%,
+        #f0f0f0 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Menu Slide Animation */
+.main-nav {
+    animation: slideDown 0.3s ease-out;
+}
+
+.category-menu.active {
+    animation: slideDown 0.3s ease-out;
+}
+
+/* Scroll Animations */
+.scroll-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Notification Animation */
+@keyframes slideInNotification {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.notification {
+    animation: slideInNotification 0.4s ease-out;
+}
+
+/* Modal Animation */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalSlideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-overlay {
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+.modal-content {
+    animation: modalSlideDown 0.4s ease-out;
+}
+
+/* Cart Icon Animation */
+@keyframes cartBounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    75% {
+        transform: scale(1.1);
+    }
+}
+
+.cart-add-animation {
+    animation: cartBounce 0.5s ease;
+}
+
+/* Search Bar Focus Animation */
+.search-input:focus {
+    animation: pulse 0.5s ease;
+}
+
+/* Social Icons Hover */
+.social-links a {
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px) scale(1.1);
+}
+
+/* Footer Links Hover */
+.footer-col ul li a {
+    position: relative;
+}
+
+.footer-col ul li a::before {
+    content: '→';
+    position: absolute;
+    left: -20px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover::before {
+    left: -15px;
+    opacity: 1;
+}
+
+/* Star Rating Animation */
+.product-rating i {
+    transition: all 0.3s ease;
+}
+
+.product-card:hover .product-rating i {
+    color: var(--yellow);
+    transform: scale(1.1);
+}
+
+/* Testimonial Dots Animation */
+.dot {
+    transition: all 0.3s ease;
+}
+
+.dot:hover {
+    transform: scale(1.3);
+}
+
+/* Back to Top Animation */
+.back-to-top {
+    transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+    animation: bounce 1s infinite;
+}
+
+/* Discount Badge Animation */
+.discount-badge {
+    animation: pulse 2s infinite;
+}
+
+/* Promo Card Animation */
+.promo-card {
+    animation: fadeInRight 0.8s ease-out 0.6s backwards;
+}
+
+/* Banner Content Animation */
+.banner-content h3,
+.banner-content p,
+.banner-content button {
+    animation: fadeInUp 0.8s ease-out backwards;
+}
+
+.banner-content h3 { animation-delay: 0.2s; }
+.banner-content p { animation-delay: 0.4s; }
+.banner-content button { animation-delay: 0.6s; }
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Reduce Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
