@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist - Automize</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .wishlist-section { padding: 60px 0; }
+        .wishlist-table { width: 100%; border-collapse: collapse; background: #fff; }
+        .wishlist-table th, .wishlist-table td { padding: 15px; border-bottom: 1px solid #eee; vertical-align: middle; text-align: center; }
+        .wishlist-table th { background: #f9f9f9; font-weight: 600; text-align: center; }
+        .wishlist-img { width: 80px; height: 80px; object-fit: cover; }
+        .stock-in { color: #155724; font-weight: bold; }
+        .stock-out { color: #dc3545; font-weight: bold; }
+        @media (max-width: 768px) { 
+            .wishlist-table { display: block; overflow-x: auto; } 
+            .wishlist-table th, .wishlist-table td { min-width: 120px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header"><div class="container" style="padding: 20px; text-align: center; background: #eee;">HEADER AREA</div></header>
+
+    <div class="container wishlist-section">
+        <h2 style="margin-bottom: 30px;">My Wishlist</h2>
+        <table class="wishlist-table">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th style="text-align: left;">Product Name</th>
+                    <th>Unit Price</th>
+                    <th>Stock Status</th>
+                    <th>Action</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="assets/images/products/wheel-01.jpg" onerror="this.src='https://via.placeholder.com/80x80?text=Product'" class="wishlist-img">
+                    </td>
+                    <td style="text-align: left; font-weight: 600;">Sport Racing Wheel</td>
+                    <td style="color: #ff3333; font-weight: bold;">$190.00</td>
+                    <td><span class="stock-in">In Stock</span></td>
+                    <td><button class="btn btn-primary btn-sm">Add to Cart</button></td>
+                    <td><a href="#" style="color: #999;"><i class="fas fa-times"></i></a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="https://via.placeholder.com/80x80?text=Headlight" class="wishlist-img">
+                    </td>
+                    <td style="text-align: left; font-weight: 600;">LED Headlight Kit</td>
+                    <td style="color: #ff3333; font-weight: bold;">$85.00</td>
+                    <td><span class="stock-out">Out of Stock</span></td>
+                    <td><button class="btn btn-primary btn-sm" disabled style="opacity: 0.6; cursor: not-allowed;">Add to Cart</button></td>
+                    <td><a href="#" style="color: #999;"><i class="fas fa-times"></i></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer class="footer"><div class="container" style="padding: 20px; text-align: center; background: #eee;">FOOTER AREA</div></footer>
+</body>
+</html>

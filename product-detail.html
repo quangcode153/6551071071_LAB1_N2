@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - Automize</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .product-detail-wrapper { display: flex; gap: 40px; padding: 60px 0; }
+        .product-gallery { width: 50%; }
+        .product-info { width: 50%; }
+        .main-img { width: 100%; border: 1px solid #eee; margin-bottom: 10px; }
+        .thumb-list { display: flex; gap: 10px; }
+        .thumb-list img { width: 80px; border: 1px solid #eee; cursor: pointer; }
+        .product-title { font-size: 28px; margin-bottom: 10px; }
+        .product-price { font-size: 24px; color: #ff3333; font-weight: bold; margin-bottom: 20px; }
+        .qty-input { width: 60px; padding: 10px; text-align: center; margin-right: 10px; }
+        @media (max-width: 768px) { .product-detail-wrapper { flex-direction: column; } .product-gallery, .product-info { width: 100%; } }
+    </style>
+</head>
+<body>
+    <header class="header"><div class="container">Header Content Here (Copy from index.html)</div></header>
+
+    <div class="container">
+        <div class="product-detail-wrapper">
+            <div class="product-gallery">
+                <img src="assets/images/products/wheel-01.jpg" onerror="this.src='https://via.placeholder.com/600'" class="main-img" alt="Main Product">
+                <div class="thumb-list">
+                    <img src="https://via.placeholder.com/100" alt="Thumb 1">
+                    <img src="https://via.placeholder.com/100" alt="Thumb 2">
+                    <img src="https://via.placeholder.com/100" alt="Thumb 3">
+                </div>
+            </div>
+            
+            <div class="product-info">
+                <h1 class="product-title">Sport Racing Wheel - Matte Black</h1>
+                <div class="product-rating">
+                    <i class="fas fa-star text-red"></i><i class="fas fa-star text-red"></i><i class="fas fa-star text-red"></i><i class="fas fa-star text-red"></i><i class="far fa-star"></i> (4 Reviews)
+                </div>
+                <div class="product-price">$190.00</div>
+                <p style="margin-bottom: 20px; color: #666;">
+                    High performance racing wheel designed for speed and durability. 
+                    Made from lightweight aluminum alloy, ensuring better handling and fuel efficiency.
+                </p>
+                <hr style="margin: 20px 0; border-top: 1px solid #eee;">
+                
+                <div class="action-buttons">
+                    <input type="number" value="1" min="1" class="qty-input">
+                    <button class="btn btn-primary">ADD TO CART</button>
+                    <button class="btn btn-light"><i class="fas fa-heart"></i></button>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <p><strong>SKU:</strong> WH-001</p>
+                    <p><strong>Category:</strong> Tires & Wheels</p>
+                    <p><strong>Tags:</strong> Sport, Racing, Black</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer"><div class="container">Footer Content Here (Copy from index.html)</div></footer>
+</body>
+</html>

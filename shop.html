@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Automize</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .page-header { background: #f4f4f4; padding: 40px 0; margin-bottom: 40px; }
+        .shop-layout { display: flex; gap: 30px; padding-bottom: 60px; }
+        .shop-sidebar { width: 25%; }
+        .shop-content { width: 75%; }
+        .widget { margin-bottom: 30px; background: #fff; padding: 20px; border: 1px solid #eee; }
+        .widget h4 { margin-bottom: 15px; border-bottom: 2px solid #ff3333; display: inline-block; padding-bottom: 5px; }
+        .widget ul li { margin-bottom: 10px; }
+        .widget ul li a { color: #333; display: flex; justify-content: space-between; }
+        .product-grid-shop { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        /* Responsive cơ bản */
+        @media (max-width: 768px) { .shop-layout { flex-direction: column; } .shop-sidebar, .shop-content { width: 100%; } .product-grid-shop { grid-template-columns: repeat(2, 1fr); } }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="top-bar"><div class="container"><div class="top-bar-content"><span>...Header Content...</span></div></div></div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Shop All Products</h1>
+            <p>Home / Shop</p>
+        </div>
+    </section>
+
+    <section class="shop-section">
+        <div class="container">
+            <div class="shop-layout">
+                <aside class="shop-sidebar">
+                    <div class="widget">
+                        <h4>Categories</h4>
+                        <ul>
+                            <li><a href="#">Tires & Wheels <span>(12)</span></a></li>
+                            <li><a href="#">Brakes <span>(5)</span></a></li>
+                            <li><a href="#">Suspension <span>(8)</span></a></li>
+                            <li><a href="#">Oil & Fluids <span>(10)</span></a></li>
+                            <li><a href="#">Batteries <span>(3)</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="widget">
+                        <h4>Price Filter</h4>
+                        <input type="range" min="0" max="1000" style="width:100%">
+                        <p>Price: $0 - $1000</p>
+                    </div>
+                </aside>
+
+                <div class="shop-content">
+                    <div class="product-grid-shop">
+                        <div class="menu-product-card" style="border: 1px solid #eee; padding: 15px;">
+                            <img src="assets/images/products/wheel-01.jpg" onerror="this.src='https://via.placeholder.com/300'" style="width:100%; margin-bottom: 15px;">
+                            <h5>Sport Racing Wheel</h5>
+                            <div style="color: #ff3333; font-weight: bold;">$190.00</div>
+                            <button class="btn btn-primary btn-sm" style="margin-top: 10px; width: 100%;">Add to Cart</button>
+                        </div>
+                        <div class="menu-product-card" style="border: 1px solid #eee; padding: 15px;">
+                            <img src="assets/images/products/brake-system-01.jpg" onerror="this.src='https://via.placeholder.com/300'" style="width:100%; margin-bottom: 15px;">
+                            <h5>Brake Disc System</h5>
+                            <div style="color: #ff3333; font-weight: bold;">$120.00</div>
+                            <button class="btn btn-primary btn-sm" style="margin-top: 10px; width: 100%;">Add to Cart</button>
+                        </div>
+                         <div class="menu-product-card" style="border: 1px solid #eee; padding: 15px;">
+                            <img src="assets/images/products/red-wheel.jpg" onerror="this.src='https://via.placeholder.com/300'" style="width:100%; margin-bottom: 15px;">
+                            <h5>Red Sport Rim</h5>
+                            <div style="color: #ff3333; font-weight: bold;">$250.00</div>
+                            <button class="btn btn-primary btn-sm" style="margin-top: 10px; width: 100%;">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p style="text-align:center; padding: 20px;">Copyright © 2024 Automize.</p>
+        </div>
+    </footer>
+</body>
+</html>
